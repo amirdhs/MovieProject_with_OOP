@@ -69,6 +69,8 @@ The application provides the following options:
 
 
 ## Generated Website
+[Go to Movie Website](https://movieproject-with-oop.pages.dev/)
+
 
 The application generates a responsive HTML website featuring:
 - Movie posters
