@@ -66,7 +66,7 @@ def generate_html(movie_name=None):
         display: flex;
         flex-direction: row;
         justify-content: center;
-        align-items: flex-start;
+        align-items: center;
         background-color: white;
         text-align: left;
         border-radius: 10px;
