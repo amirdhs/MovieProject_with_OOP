@@ -59,7 +59,7 @@ class MovieApp:
 
 
     def _command_list_movies(self):
-        movies = self._storage.list_movies()
+        movies = storage_json.StorageJson.list_movies(self)
         return movies
 
     def _command_movie_stats(self):
@@ -103,17 +103,17 @@ class MovieApp:
             print(f"  - {movie} (Rating: {min_rating})")
 
     def _generate_website(self):
-        movie_title = input("Enter the title of Movie: ")
-        data = data_fetcher.fetch_data(movie_title)
+
+        # Generate HTML for either a specific movie or all movies
+        html_content = website_generator.generate_html()
 
         # Write to movie_website.html
-        if data is not None:
-            html_content = website_generator.generate_html(data, movie_title)
-            with open("movie_web.html", "w") as file:
+        try:
+            with open("movie_web.html", "w", encoding='utf-8') as file:
                 file.write(html_content)
             print("Website was successfully generated to the file movie_web.html.")
-
-        website_generator.generate_html(data,movie_title)
+        except Exception as e:
+            print(f"Error generating website: {str(e)}")
 
     def run(self):
         while True:
@@ -132,12 +132,10 @@ class MovieApp:
                 break
 
             if user_input == 1:
-                MovieApp._command_list_movies(self)
+                self._command_list_movies()
             elif user_input == 2:
                 name = input("Please enter your favorite movie: ")
-                rate = float(input("Enter movie rating: "))
-                year = int(input("Enter year of movie : "))
-                storage_json.StorageJson.add_movie(self,title=name,year=rate,rating=year)
+                storage_json.StorageJson.add_movie(self,title=name)
             elif user_input == 3:
                 name = input("Enter the name of the movie you want to delete: ")
                 storage_json.StorageJson.delete_movie(self,name)
@@ -147,7 +145,7 @@ class MovieApp:
                 new_rating = float(input("Enter new rate : "))
                 storage_json.StorageJson.update_movie(self,movie_name,new_rating)
             elif user_input == 5:
-                MovieApp._command_movie_stats(self)
+                self._command_movie_stats()
             elif user_input == 6:
                 random_movie()
             elif user_input == 7:
@@ -164,6 +162,6 @@ class MovieApp:
             elif user_input == 8:
                 sorted_movie()
             elif user_input == 9:
-                MovieApp._generate_website(self)
+                self._generate_website()
             else:
                 print("Invalid choice. Please choose a number between 1 and 8.")
