@@ -32,7 +32,7 @@ def random_movie():
         movies = json.load(file)
     random_key = random.choice(list(movies.keys()))
     random_value = movies[random_key]
-    print(f"Random movie is: {random_key}, {random_value}")
+    print(f"Random movie is: {random_key}, {random_value['rating']}")
 
 def sorted_movie():
     """
@@ -102,6 +102,37 @@ class MovieApp:
         for movie in worst_movies:
             print(f"  - {movie} (Rating: {min_rating})")
 
+    def _command_search_movie(self):
+        """Search for a movie in the local JSON database"""
+        name = input("What is the name of the movie you are looking for? ...")
+        try:
+            with open("data.json", "r") as file:
+                movies = json.load(file)
+
+            # Case-insensitive search that matches partial names
+            matches = {title: data for title, data in movies.items()
+                       if name.lower() in title.lower()}
+
+            if matches:
+                print("\nFound movies:")
+                for title, movie_data in matches.items():
+                    if isinstance(movie_data, dict):
+                        print(f"\nTitle: {title}")
+                        print(f"Year: {movie_data.get('year', 'N/A')}")
+                        print(f"Rating: {movie_data.get('rating', 'N/A')}")
+                        if 'plot' in movie_data:
+                            print(f"Plot: {movie_data['plot']}")
+                    else:
+                        # Handle old format where movie_data is just the rating
+                        print(f"\nTitle: {title}")
+                        print(f"Rating: {movie_data}")
+            else:
+                print(f"No movies found matching '{name}'")
+        except FileNotFoundError:
+            print("Movie database not found.")
+        except Exception as e:
+            print(f"An error occurred while searching: {e}")
+
     def _generate_website(self):
 
         # Generate HTML for either a specific movie or all movies
@@ -149,16 +180,7 @@ class MovieApp:
             elif user_input == 6:
                 random_movie()
             elif user_input == 7:
-                name = input("What is the name of the movie you are looking for? ...")
-                data = data_fetcher.fetch_data(name)
-                if data:
-                    # Handle single dictionary
-                    if isinstance(data, dict):
-                        data = [data]  # Convert to a list for uniform handling
-                    for movie in data:
-                        print(f"Title: {movie.get('Title', 'N/A')}")
-                        print(f"Year: {movie.get('Year', 'N/A')}")
-                        print(f"IMDb Rating: {movie.get('imdbRating')}")
+                self._command_search_movie()
             elif user_input == 8:
                 sorted_movie()
             elif user_input == 9:
