@@ -11,7 +11,7 @@ class StorageJson(IStorage):
         with open("data.json", "r") as file:
             movies = json.load(file)
             for movie, rate in movies.items():
-                print(movie, rate)
+                print(movie, rate["rating"])
 
     def add_movie(self, title, year=None, rating=None):
         try:
