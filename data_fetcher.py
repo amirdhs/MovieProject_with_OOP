@@ -1,21 +1,23 @@
 import requests
+import os
+from dotenv import load_dotenv
 
-# URL with your API key
+# Load environment variables
+load_dotenv()
+
+
 def fetch_data(title):
-    url = f"http://www.omdbapi.com/?t={title}&apikey=d5776c1"
-    # Send GET request
+    """Fetch movie data from OMDB API using environment variable for API key."""
+    api_key = os.getenv('OMDB_API_KEY')
+    if not api_key:
+        raise ValueError("OMDB API key not found in environment variables")
+
+    url = f"http://www.omdbapi.com/?t={title}&apikey={api_key}"
     response = requests.get(url)
 
-    # Check if request was successful
     if response.status_code == 200:
-        # Parse JSON response
         movie_data = response.json()
         return movie_data
-        # print(f"Title: {movie_data.get('Title')}}")
-        # print(f"Year: {movie_data.get('Year')}")
-        # print(f"Plot: {movie_data.get('Plot')}")
-        # print(f"IMDb Rating: {movie_data.get('imdbRating')}")
     else:
         print(f"Error: {response.status_code}")
-
-#
+        return None

@@ -1,0 +1,11 @@
+# .gitignore
+.env
+__pycache__/
+*.pyc
+.DS_Store
+.idea/
+.vscode/
+venv/
+env/
+*.csv
+movie_web.html
