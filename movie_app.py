@@ -140,9 +140,9 @@ class MovieApp:
 
         # Write to movie_website.html
         try:
-            with open("movie_web.html", "w", encoding='utf-8') as file:
+            with open("index.html", "w", encoding='utf-8') as file:
                 file.write(html_content)
-            print("Website was successfully generated to the file movie_web.html.")
+            print("Website was successfully generated to the file index.html.")
         except Exception as e:
             print(f"Error generating website: {str(e)}")
 

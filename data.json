@@ -78,5 +78,11 @@
         "rating": 8.0,
         "plot": "In the near future, a lonely writer develops an unlikely relationship with an operating system designed to meet his every need.",
         "poster": "https://m.media-amazon.com/images/M/MV5BMjA1Nzk0OTM2OF5BMl5BanBnXkFtZTgwNjU2NjEwMDE@._V1_SX300.jpg"
+    },
+    "wall street": {
+        "year": 1987,
+        "rating": 7.3,
+        "plot": "An impatient young stockbroker is willing to do anything to get to the top, including trading on illegal inside information taken through a ruthless, greedy corporate raider who takes the youth under his wing.",
+        "poster": "https://m.media-amazon.com/images/M/MV5BMWQ4NDY4NTktYjE5NS00MWQ5LWFmZTUtNjk5NjA4Mzc3ODNhXkEyXkFqcGc@._V1_SX300.jpg"
     }
 }
