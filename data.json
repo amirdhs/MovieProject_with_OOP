@@ -1,16 +1,76 @@
 {
-    "The Shawshank Redemption": 9.5,
-    "Pulp Fiction": 8.8,
-    "The Room": 7.6,
-    "The Godfather": 9.2,
-    "The Godfather: Part II": 9.0,
-    "The Dark Knight": 9.5,
-    "12 Angry Men": 8.9,
-    "Everything Everywhere All At Once": 8.9,
-    "Forrest Gump": 8.8,
-    "Star Wars: Episode V": 8.7,
-    "foo": {
-        "year": 2024,
-        "rating": 1.5
+    "The Shawshank Redemption": {
+        "year": 1994,
+        "rating": 9.3,
+        "plot": "A banker convicted of uxoricide forms a friendship over a quarter century with a hardened convict, while maintaining his innocence and trying to remain hopeful through simple compassion.",
+        "poster": "https://m.media-amazon.com/images/M/MV5BMDAyY2FhYjctNDc5OS00MDNlLThiMGUtY2UxYWVkNGY2ZjljXkEyXkFqcGc@._V1_SX300.jpg"
+    },
+    "Pulp Fiction": {
+        "year": 1994,
+        "rating": 8.9,
+        "plot": "The lives of two mob hitmen, a boxer, a gangster and his wife, and a pair of diner bandits intertwine in four tales of violence and redemption.",
+        "poster": "https://m.media-amazon.com/images/M/MV5BYTViYTE3ZGQtNDBlMC00ZTAyLTkyODMtZGRiZDg0MjA2YThkXkEyXkFqcGc@._V1_SX300.jpg"
+    },
+    "The Room": {
+        "year": 2003,
+        "rating": 3.6,
+        "plot": "In San Francisco, an amiable banker's seemingly perfect life is turned upside down when his deceitful bride-to-be embarks on a passionate affair with his best friend.",
+        "poster": "https://m.media-amazon.com/images/M/MV5BYmNkMThiODYtZTAzMC00ODJkLTg5MmEtMWIyMGFlZDlkYmNlXkEyXkFqcGc@._V1_SX300.jpg"
+    },
+    "The Godfather": {
+        "year": 1972,
+        "rating": 9.2,
+        "plot": "The aging patriarch of an organized crime dynasty transfers control of his clandestine empire to his reluctant son.",
+        "poster": "https://m.media-amazon.com/images/M/MV5BNGEwYjgwOGQtYjg5ZS00Njc1LTk2ZGEtM2QwZWQ2NjdhZTE5XkEyXkFqcGc@._V1_SX300.jpg"
+    },
+    "The Godfather: Part II": {
+        "year": 1974,
+        "rating": 9.0,
+        "plot": "The early life and career of Vito Corleone in 1920s New York City is portrayed, while his son, Michael, expands and tightens his grip on the family crime syndicate.",
+        "poster": "https://m.media-amazon.com/images/M/MV5BNzc1OWY5MjktZDllMi00ZDEzLWEwMGItYjk1YmRhYjBjNTVlXkEyXkFqcGc@._V1_SX300.jpg"
+    },
+    "The Dark Knight": {
+        "year": 2008,
+        "rating": 9.0,
+        "plot": "When a menace known as the Joker wreaks havoc and chaos on the people of Gotham, Batman, James Gordon and Harvey Dent must work together to put an end to the madness.",
+        "poster": "https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_SX300.jpg"
+    },
+    "12 Angry Men": {
+        "year": 1957,
+        "rating": 9.0,
+        "plot": "The jury in a New York City murder trial is frustrated by a single member whose skeptical caution forces them to more carefully consider the evidence before jumping to a hasty verdict.",
+        "poster": "https://m.media-amazon.com/images/M/MV5BYjE4NzdmOTYtYjc5Yi00YzBiLWEzNDEtNTgxZGQ2MWVkN2NiXkEyXkFqcGc@._V1_SX300.jpg"
+    },
+    "Everything Everywhere All At Once": {
+        "year": 2022,
+        "rating": 7.8,
+        "plot": "A middle-aged Chinese immigrant is swept up into an insane adventure in which she alone can save existence by exploring other universes and connecting with the lives she could have led.",
+        "poster": "https://m.media-amazon.com/images/M/MV5BOWNmMzAzZmQtNDQ1NC00Nzk5LTkyMmUtNGI2N2NkOWM4MzEyXkEyXkFqcGc@._V1_SX300.jpg"
+    },
+    "Forrest Gump": {
+        "year": 1994,
+        "rating": 8.8,
+        "plot": "The history of the United States from the 1950s to the '70s unfolds from the perspective of an Alabama man with an IQ of 75, who yearns to be reunited with his childhood sweetheart.",
+        "poster": "https://m.media-amazon.com/images/M/MV5BNDYwNzVjMTItZmU5YS00YjQ5LTljYjgtMjY2NDVmYWMyNWFmXkEyXkFqcGc@._V1_SX300.jpg"
+    },
+    "Star Wars: Episode V": {
+        "year": 1980,
+        "rating": 8.7,
+        "plot": "After the Empire overpowers the Rebel Alliance, Luke Skywalker begins his Jedi training with Yoda. At the same time, Darth Vader and bounty hunter Boba Fett pursue his friends across the galaxy.",
+        "poster": "https://m.media-amazon.com/images/M/MV5BMTkxNGFlNDktZmJkNC00MDdhLTg0MTEtZjZiYWI3MGE5NWIwXkEyXkFqcGc@._V1_SX300.jpg"
+    },
+    "dark": {
+        "year": 2017,
+        "rating": 8.7,
+        "plot": "A family saga with a supernatural twist, set in a German town where the disappearance of two young children exposes the relationships among four families.",
+        "director": "N/A",
+        "actors": "Louis Hofmann, Karoline Eichhorn, Lisa Vicari",
+        "poster": "https://m.media-amazon.com/images/M/MV5BOWJjMGViY2UtNTAzNS00ZGFjLWFkNTMtMDBiMDMyZTM1NTY3XkEyXkFqcGc@._V1_SX300.jpg"
+    },
+    "her": {
+        "year": 2013,
+        "rating": 8.0,
+        "plot": "In the near future, a lonely writer develops an unlikely relationship with an operating system designed to meet his every need.",
+        "poster": "https://m.media-amazon.com/images/M/MV5BMjA1Nzk0OTM2OF5BMl5BanBnXkFtZTgwNjU2NjEwMDE@._V1_SX300.jpg"
     }
 }
