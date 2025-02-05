@@ -1,47 +1,44 @@
-# Using JSON Storage
 from movie_app import MovieApp
 from storage_json import StorageJson
-
-
-def main():
-    # Initialize storage with the path to your JSON file
-    storage = StorageJson('data.json')
-
-    # Create the movie app instance
-    movie_app = MovieApp(storage)
-
-    try:
-        # Run the application
-        movie_app.run()
-    except KeyboardInterrupt:
-        print("\nApplication terminated by user.")
-    except Exception as e:
-        print(f"\nAn error occurred: {e}")
-
-
-if __name__ == "__main__":
-    main()
-
-# Using CSV Storage
-"""
-from movie_app import MovieApp
 from storage_csv import StorageCsv
+import os
+
+
+def get_storage_type():
+    """Ask user for storage type preference"""
+    while True:
+        print("\nChoose storage type:")
+        print("1. JSON Storage")
+        print("2. CSV Storage")
+        try:
+            choice = int(input("Enter your choice (1-2): "))
+            if choice in [1, 2]:
+                return choice
+            print("Please enter 1 or 2")
+        except ValueError:
+            print("Please enter a valid number")
+
 
 def main():
-    # Initialize storage with the path to your CSV file
-    storage = StorageCsv('movies.csv')
-
-    # Create the movie app instance
-    movie_app = MovieApp(storage)
-
     try:
-        # Run the application
+        # Get storage preference
+        storage_choice = get_storage_type()
+
+        # Initialize appropriate storage
+        if storage_choice == 1:
+            storage = StorageJson('data.json')
+        else:
+            storage = StorageCsv('movies.csv')
+
+        # Create and run the movie app
+        movie_app = MovieApp(storage)
         movie_app.run()
+
     except KeyboardInterrupt:
         print("\nApplication terminated by user.")
     except Exception as e:
         print(f"\nAn error occurred: {e}")
 
+
 if __name__ == "__main__":
     main()
-"""
