@@ -1,7 +1,6 @@
 from movie_app import MovieApp
-from storage_json import StorageJson
-from storage_csv import StorageCsv
-import os
+from storage.storage_json import StorageJson
+from storage.storage_csv import StorageCsv
 
 
 def get_storage_type():
@@ -26,9 +25,9 @@ def main():
 
         # Initialize appropriate storage
         if storage_choice == 1:
-            storage = StorageJson('data.json')
+            storage = StorageJson('data/data.json')
         else:
-            storage = StorageCsv('movies.csv')
+            storage = StorageCsv('data/movies.csv')
 
         # Create and run the movie app
         movie_app = MovieApp(storage)

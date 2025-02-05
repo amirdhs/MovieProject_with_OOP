@@ -35,7 +35,7 @@ class MovieApp:
     def _command_movie_stats(self):
         """Calculate movie statistics"""
         try:
-            with open("data.json", "r") as file:
+            with open("data/data.json", "r") as file:
                 data = json.load(file)
 
             movies = {}
@@ -74,7 +74,7 @@ class MovieApp:
     def _command_random_movie(self):
         """Select a random movie"""
         try:
-            with open("data.json", "r") as file:
+            with open("data/data.json", "r") as file:
                 movies = json.load(file)
             if not movies:
                 print("No movies in database.")
@@ -94,7 +94,7 @@ class MovieApp:
         """Search for a movie"""
         name = input("What is the name of the movie you are looking for? ...")
         try:
-            with open("data.json", "r") as file:
+            with open("data/data.json", "r") as file:
                 movies = json.load(file)
 
             matches = {title: data for title, data in movies.items()
@@ -122,7 +122,7 @@ class MovieApp:
     def _command_sorted_movies(self):
         """Display movies sorted by rating"""
         try:
-            with open("data.json", "r") as file:
+            with open("data/data.json", "r") as file:
                 data = json.load(file)
 
             movies = {}

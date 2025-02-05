@@ -90,7 +90,7 @@ def generate_html(movie_name=None):
 
     try:
         # Read the JSON file
-        with open("data.json", "r") as file:
+        with open("data/data.json", "r") as file:
             movies_data = json.load(file)
 
         if movie_name:
